@@ -1,0 +1,15 @@
+<%= form_with(model: @a) do |form| %>
+<p>
+  <%= form.label(:name) %><br>
+  <%= form.text_field(:name) %>
+</p>
+<p>
+  <%= form.label(:kind) %><br>
+  <%= form.text_field(:kind) %>
+</p>
+<p>
+  <%= form.label(:fave_snack) %><br>
+  <%= select_tag(:fave_snack, options_for_select([['Carrots', 1], ['Fruit', 2], ['Chips', 3], ['Cookies', 4]])) %>
+</p>
+<%= form.submit("Create Animal") %>
+<% end %>
