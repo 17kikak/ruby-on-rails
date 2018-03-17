@@ -1,6 +1,9 @@
-<h1><%= @a.name %></h1>
-<p><%= @a.name %> is a
-  <%= @a.kind.downcase %>
+<h1><%= @animal.name %></h1>
+<p><%= @animal.name %> is a
+  <%= @animal.age %> year old
+  <%= @animal.kind.downcase %>
   that likes to eat
-  <%= @a.fave_snack.downcase %>.
+  <%= @animal.fave_snack.downcase %>
+  and listen to
+  '<%= @animal.fave_song.downcase %>'.
 </p>

@@ -1,15 +1,16 @@
-<%= form_with(model: @a) do |form| %>
-<p>
-  <%= form.label(:name) %><br>
-  <%= form.text_field(:name) %>
-</p>
-<p>
-  <%= form.label(:kind) %><br>
-  <%= form.text_field(:kind) %>
-</p>
-<p>
-  <%= form.label(:fave_snack) %><br>
-  <%= select_tag(:fave_snack, options_for_select([['Carrots', 1], ['Fruit', 2], ['Chips', 3], ['Cookies', 4]])) %>
-</p>
-<%= form.submit("Create Animal") %>
+<ul>
+  <% for message in @animal.errors.full_messages %>
+    <li>
+      <%= message %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_with(model: @animal, local: true) do |form| %>
+  Name: <%= form.text_field(:name) %><br>
+  Kind: <%= form.text_field(:kind) %><br>
+  Favorite Snack: <%= select_tag(:fave_snack, options_for_select([['Carrots', 1], ['Fruit', 2], ['Chips', 3], ['Cookies', 4]])) %><br>
+  Favorite Song: <%= form.text_field(:fave_song) %><br>
+  Age: <%= form.text_field(:age) %><br>
+  <%= form.submit("Create Animal") %>
 <% end %>
