@@ -1,0 +1,5 @@
+<%= form_with(model: @dish, local: true) do |form| %>
+  Name: <%= form.text_field(:name) %><br>
+  Price: <%= form.text_field(:price) %><br>
+  <%= form.submit("Create Dish") %>
+<% end %>

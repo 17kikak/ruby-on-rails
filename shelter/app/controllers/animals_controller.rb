@@ -1,10 +1,11 @@
 class AnimalsController < ApplicationController
 
+  def index
+    @animals = Animal.all
+  end
+
   def show
-    @a = Animal.new
-    @a.name = "Barry"
-    @a.kind = "Blue Whale"
-    @a.fave_snack = "Krill"
+    @animal = Animal.find(params[:id])
   end
 
   def new
@@ -14,7 +15,7 @@ class AnimalsController < ApplicationController
   def create
     params.permit!
     @animal = Animal.new(params[:animal])
-    if @animal.valid?
+    if @animal.save
       render action: :show
     else
       render action: :new
