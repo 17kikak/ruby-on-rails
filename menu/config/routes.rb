@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get "/dish/:id", to: "dish#show"
-  get "/dish/new", to: "dish#new"
-  post "/dish", to: "dish#create"
+  get "/dishes/new", to: "dishes#new"
+  post "/dishes", to: "dishes#create"
+  get "/dishes", to: "dishes#index"
+  get "/dishes/:id", to: "dishes#show"
 end
